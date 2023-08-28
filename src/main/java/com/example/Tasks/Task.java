@@ -1,5 +1,7 @@
 package com.example.Tasks;
 
+import java.util.Comparator;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -75,7 +77,7 @@ public class Task implements Comparable<Task> {
 	@Override
 	public int compareTo(Task other) {
 		// TODO Auto-generated method stub
-		return this.getDueDate().compareTo(other.getDueDate());
+		return Comparator.comparing(Task::getDueDate).thenComparing(Task::getPriority).compare(this, other);
 		
 		
 	}

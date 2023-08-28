@@ -77,8 +77,8 @@ public class TaskService {
 		// TODO Auto-generated method stub
 		PriorityQueue<Task> list=new PriorityQueue<>();
 
-	
 		list.addAll(this.getAll());
+		
 		return list;
 	}
 
